@@ -1,0 +1,58 @@
+spec_version: v1
+kind: knowledge_base
+name: airguard_knowledge
+description: Trusted knowledge base for AirGuard AI covering air quality, pollutants, pollution reduction, sustainable cities, and climate action.
+
+vector_index:
+  extraction_strategy: standard
+  chunk_size: 512
+  chunk_overlap: 64
+  limit: 5
+
+conversational_search_tool:
+  query_source: Agent
+  agent_query_description: Natural-language questions about air quality, AQI, pollutants, pollution sources, health effects, sustainability, and SDG 11/13.
+  citations:
+    citation_title: Source
+    citations_shown: 3
+  generation:
+    enabled: false
+  confidence_thresholds:
+    retrieval_confidence_threshold: Low
+
+documents:
+  - path: docs/cpcb_naaqs.html
+    url: https://cpcb.nic.in/naaqs/
+
+  - path: docs/cpcb_air_pollution_control.html
+    url: https://cpcb.nic.in/air-pollution-control/
+
+  - path: docs/who_ambient_air_quality.html
+    url: https://www.who.int/news-room/fact-sheets/detail/ambient-(outdoor)-air-quality-and-health
+
+  - path: docs/who_air_pollution_topics.html
+    url: https://www.who.int/health-topics/air-pollution
+
+  - path: docs/epa_pm_basics.html
+    url: https://www.epa.gov/pm-pollution/particulate-matter-pm-basics
+
+  - path: docs/epa_no2_basics.html
+    url: https://www.epa.gov/no2-pollution/basic-information-about-no2
+
+  - path: docs/epa_so2_basics.html
+    url: https://www.epa.gov/so2-pollution/sulfur-dioxide-basics
+
+  - path: docs/epa_co_basics.html
+    url: https://www.epa.gov/co-pollution/basic-information-about-carbon-monoxide-co-outdoor-air-pollution
+
+  - path: docs/epa_ozone_basics.html
+    url: https://www.epa.gov/ground-level-ozone-pollution/ground-level-ozone-basics
+
+
+    url: https://www.unep.org/explore-topics/air
+
+  - path: docs/sdg_goal11.html
+    url: https://sdgs.un.org/goals/goal11
+
+  - path: docs/sdg_goal13.html
+    url: https://sdgs.un.org/goals/goal13
